@@ -12,4 +12,3 @@ gem 'spring',        group: :development
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'jquery-minicolors-rails'
-gem "gretel"

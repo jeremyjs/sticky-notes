@@ -1,5 +1,7 @@
-<% breadcrumb :main, current_class: "btn btn-default", link_current: true %>
-
+<ol class="breadcrumb">
+  <li>Dashboard</li>
+  <li><%= link_to "New Project", new_project_path, class: "btn btn-default" %></li>
+</ol>
 <div class="projects">
   <% @projects.each do |project| %>
     <%= render 'projects/project', project: project %>
