@@ -1,0 +1,32 @@
+/*
+ *= require bootstrap_select
+ *= require bootstrap
+ *= require jquery.minicolors
+ *= require font-awesome
+ *= require navbar
+ *= require footer
+ *= require person
+ *= require_self
+ */
+.main { margin-bottom: 60px; }
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #fff;
+}
+.breadcrumb > .active {
+  color: #333;
+}
+
+/* Forms */
+form .actions {
+  margin-top: 10px;
+}
+
+/* Project */
+.panel-body .actions {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+

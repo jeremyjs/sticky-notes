@@ -1,0 +1,14 @@
+.footer {
+  background-color: white;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+
+  p {
+    text-align: center;
+    line-height: 20px;
+  }
+  .name { font-weight: bold; }
+}

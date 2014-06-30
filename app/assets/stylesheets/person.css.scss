@@ -1,0 +1,34 @@
+ul.unstyled {
+  list-style: none;
+  padding-left: 20px;
+}
+.media {
+  width: 128px;
+  display: inline;
+}
+.media-link { position: relative; }
+.media-heading {
+  color: white;
+  background-color: rgba(51, 51, 51, 0.5);
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 128px;
+  z-index: 100;
+}
+img.media-object {
+  width: 128px;
+}
+.projects { margin-top: 20px; }
+.yellow { color: yellow; }
+.orange { color: orange; }
+.blue { color: #0099FF; }
+.pink { color: pink; }
+.check-group {
+  input {
+    margin-right: 4px;
+  }
+  label {
+    margin-right: 15px;
+  }
+}

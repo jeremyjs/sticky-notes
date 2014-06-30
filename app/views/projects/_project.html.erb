@@ -1,0 +1,22 @@
+<% project ||= @project %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <%= link_to fa_icon("pencil"), edit_project_path(project) %>
+      <span class="name"><strong><%= project.name %></strong></span>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <ul class="unstyled media-list">
+      <% project.people.each do |person| %>
+        <%= render person %>
+      <% end %>
+      <%= "No one is assigned to this project." if project.people.empty? %>
+    </ul>
+    <div class="clearfix"></div>
+    <div class="actions">
+      <%= link_to "Add Person", new_person_path({project: project}), class: "btn btn-default" %>
+    </div>
+  </div>
+</div>
+

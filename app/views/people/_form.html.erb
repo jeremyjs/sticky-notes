@@ -1,0 +1,41 @@
+<%= form_for @person, :html => {:class => 'form-person'} do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@person.errors.count, "error") %>
+        prohibited this person from being saved:
+      </h2>
+
+      <ul>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field form-group check-group">
+    <%= f.label :role %><br>
+    <%= f.collection_check_boxes :role_ids, Role.all, :id, :name %>
+  </div>
+  <div class="field form-group check-group">
+    <%= f.label :skills %><br>
+    <%= f.collection_check_boxes :skill_ids, Skill.all, :id, :name %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :band %><br>
+    <%= f.number_field :band %>
+  </div>
+  <div class="field form-group check-group">
+    <%= f.label :project %><br />
+    <%= f.collection_check_boxes(:project_ids, Project.all, :id, :name,
+                            {:include_blank => "Please select a project..."}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

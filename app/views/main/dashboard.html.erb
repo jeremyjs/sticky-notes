@@ -1,0 +1,7 @@
+<% breadcrumb :main, current_class: "btn btn-default", link_current: true %>
+
+<div class="projects">
+  <% @projects.each do |project| %>
+    <%= render 'projects/project', project: project %>
+  <% end %>
+</div>
