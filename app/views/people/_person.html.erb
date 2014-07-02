@@ -2,7 +2,6 @@
   <a class="media-link pull-left" href="<%= edit_person_path(person) %>">
     <h4 class="media-heading" style="color: <%= "#{person.color}" %>;">
       <%= person.name %>
-      <%= "[" unless person.role.blank? && person.band.blank? %><%= person.role unless person.role.blank? %><%= person.band unless person.band.blank? %><%= "]" unless person.role.blank? && person.band.blank? %>
     </h4>
     <%= image_tag "avatar_placeholder.png",
       class: "media-object" %>

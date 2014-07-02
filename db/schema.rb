@@ -11,30 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140627105456) do
+ActiveRecord::Schema.define(version: 20140702095517) do
 
   create_table "colors", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "hex"
+    t.string   "value"
   end
 
   create_table "people", force: true do |t|
     t.string   "name"
-    t.string   "color"
-    t.string   "role"
-    t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_url"
     t.integer  "band"
-    t.text     "skills"
   end
 
   create_table "people_projects", force: true do |t|
     t.integer "person_id"
     t.integer "project_id"
+  end
+
+  create_table "people_roles", force: true do |t|
+    t.integer "person_id"
+    t.integer "role_id"
+  end
+
+  create_table "people_skills", force: true do |t|
+    t.integer "person_id"
+    t.integer "skill_id"
   end
 
   create_table "projects", force: true do |t|
@@ -48,14 +54,12 @@ ActiveRecord::Schema.define(version: 20140627105456) do
     t.integer  "color_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "person_id"
   end
 
   create_table "skills", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "person_id"
   end
 
 end

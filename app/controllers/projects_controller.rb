@@ -28,7 +28,13 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to "/" }
+        format.html do
+          if session[:return_to] == projects_path
+            redirect_to projects_path
+          else
+            redirect_to root_path
+          end
+        end
         format.json { render :show, status: :created, location: @project }
       else
         format.html { render :new }
@@ -42,7 +48,13 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to root_url }
+        format.html do
+          if session[:return_to] == projects_path
+            redirect_to projects_path
+          else
+            redirect_to root_path
+          end
+        end
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }

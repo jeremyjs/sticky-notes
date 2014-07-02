@@ -1,3 +1,3 @@
 class Skill < ActiveRecord::Base
-  has_one :color
+  has_and_belongs_to_many :people
 end

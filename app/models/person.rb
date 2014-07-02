@@ -1,11 +1,15 @@
 class Person < ActiveRecord::Base
   has_and_belongs_to_many :projects
-  has_many :roles
-  has_many :skills
+  has_and_belongs_to_many :roles
+  has_and_belongs_to_many :skills
+
+  def role
+    roles.first
+  end
 
   def color
     if roles.any?
-      roles.first.color.hex
+      role.color.hex
     else
       "white"
     end

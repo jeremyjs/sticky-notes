@@ -1,5 +1,5 @@
 class AddHexToColors < ActiveRecord::Migration
   def change
-    add_column :colors, :hex, :text
+    add_column :colors, :hex, :string
   end
 end
