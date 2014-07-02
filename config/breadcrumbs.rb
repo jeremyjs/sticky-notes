@@ -2,10 +2,6 @@ crumb :root do
   link "Dashboard", root_path
 end
 
-crumb :main do
-  link "New Project", new_project_path
-end
-
 crumb :projects do
   link "Project Listing", projects_path
 end
