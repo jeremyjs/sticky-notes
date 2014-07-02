@@ -1,0 +1,41 @@
+#= require jquery
+#= require jquery.turbolinks
+#= require jquery_ujs
+#= require jquery-ui
+#= require bootstrap
+#= require bootstrap_select
+#= require jquery.minicolors
+#= require jquery.shapeshift
+#= require turbolinks
+
+$ ->
+  $('input.colors[type=text]').minicolors
+    theme: 'bootstrap'
+  $('.grid').shapeshift()
+  .on "ss-removed", (event, item) ->
+    project_id = this.id.slice(-1)
+    item_id = item.id.slice(-1)
+
+    console.log("removing person " + item_id + " from project " + project_id)
+
+    $.post "/projects/" + project_id + "/remove_people",
+        _method: 'patch'
+        id: project_id
+        people:
+          people: item_id
+        (data) -> console.log("Successfully posted.")
+  .on "ss-added", (event, item) ->
+    project_id = this.id.slice(-1)
+    item_id = item.id.slice(-1)
+
+    console.log("adding person " + item_id + " to project " + project_id)
+
+    $.post "/projects/" + project_id + "/add_people",
+        _method: 'patch'
+        id: project_id
+        people:
+          people: item_id
+        (data) -> console.log("Successfully posted.")
+  .on "ss-drop-complete", ->
+    location.reload()
+

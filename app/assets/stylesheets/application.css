@@ -1,8 +1,8 @@
 /*
  *= require bootstrap_select
  *= require bootstrap
- *= require jquery.minicolors
  *= require font-awesome
+ *= require jquery.minicolors
  *= require navbar
  *= require footer
  *= require person
@@ -29,6 +29,23 @@
 /* Forms */
 form .actions {
   margin-top: 10px;
+}
+
+/* Grid */
+.grid {
+  position: relative;
+  width: 100%;
+}
+.grid-item {
+  height: 128px;
+  width: 128px;
+  position: absolute;
+}
+.grid-item-placeholder {
+  height: 128px;
+  width: 128px;
+  position: absolute;
+  background-color: #eee;
 }
 
 /* Project */

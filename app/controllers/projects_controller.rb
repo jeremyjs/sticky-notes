@@ -61,7 +61,15 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def add_person
+  def remove_people
+    return redirect_to :back unless params[:people]
+    current_projects = Person.find(params[:people][:people]).projects
+    old_project = Project.find(params[:id])
+    current_projects.delete(old_project) if current_projects.include?(old_project)
+    redirect_to :back
+  end
+
+  def add_people
     return redirect_to :back unless params[:people]
     current_projects = Person.find(params[:people][:people]).projects
     new_project = Project.find(params[:id])

@@ -20,5 +20,13 @@ projects = [
   "Identity"
 ]
 
-projects.each { |name| Project.create({ name: name }) }
+projects.each { |name| Project.find_or_create_by({ name: name }) }
 
+people = [
+  { name: "Nicole" },
+  { name: "Ian" },
+  { name: "Calvin" },
+  { name: "Mert" }
+]
+
+people.each { |person| Person.find_or_create_by(person) }

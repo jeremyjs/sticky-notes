@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   root 'main#dashboard'
   get 'main/dashboard', as: 'dashboard'
 
-  patch 'projects/:id/add_person' => 'projects#add_person', as: 'add_person_to_project'
+  patch 'projects/:id/add_people' => 'projects#add_people', as: 'add_people_to_project'
+  patch 'projects/:id/remove_people' => 'projects#remove_people', as: 'remove_people_from_project'
   resources :projects
 
   resources :people
