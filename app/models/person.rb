@@ -3,6 +3,10 @@ class Person < ActiveRecord::Base
   has_many :roles
   has_many :skills
 
+  validates_uniqueness_of :projects
+  validates_uniqueness_of :roles
+  validates_uniqueness_of :skills
+
   def color
     if roles.any?
       roles.first.color.hex

@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   resources :colors
 
   root 'main#dashboard'
-  get 'main/dashboard'
+  get 'main/dashboard', as: 'dashboard'
 
+  patch 'projects/:id/add_person' => 'projects#add_person', as: 'add_person_to_project'
   resources :projects
 
   resources :people

@@ -42,8 +42,7 @@ class ProjectsController < ApplicationController
   def update
     respond_to do |format|
       if @project.update(project_params)
-        # TODO: refactor, since "redirect_to root" is a pattern
-        format.html { redirect_to "/" }
+        format.html { redirect_to root_url }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
@@ -62,6 +61,14 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def add_person
+    return redirect_to :back unless params[:people]
+    current_projects = Person.find(params[:people][:people]).projects
+    new_project = Project.find(params[:id])
+    current_projects << new_project unless current_projects.include?(new_project)
+    redirect_to :back
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
@@ -70,6 +77,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name)
+      params.require(:project).permit(:name, :people)
     end
 end

@@ -8,6 +8,13 @@
  *= require person
  *= require_self
  */
+
+/* Helpers */
+.inline {
+  display: inline;
+}
+
+/* Breadcrumbs */
 .main { margin-bottom: 60px; }
 .breadcrumb {
   padding: 0;
@@ -29,4 +36,3 @@ form .actions {
   margin-top: 15px;
   padding-left: 20px;
 }
-

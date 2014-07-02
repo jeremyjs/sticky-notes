@@ -15,7 +15,12 @@
     </ul>
     <div class="clearfix"></div>
     <div class="actions">
-      <%= link_to "Add Person", new_person_path({project: project}), class: "btn btn-default" %>
+      <%= form_for project, url: { controller: "projects", action: "add_person", id: project }, html: { class: "inline" } do |f| %>
+        <%= collection_select(:people, :people, Person.all, :id, :name) %>
+        <%= options_from_collection_for_select(Person.all, :id, :name) %>
+        <%= f.submit "Add", class: "btn btn-default" %>
+      <% end %>
+      <%= link_to "New Person", new_person_path({project: project}), class: "btn btn-default" %>
     </div>
   </div>
 </div>
