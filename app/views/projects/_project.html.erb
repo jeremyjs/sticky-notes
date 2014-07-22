@@ -4,6 +4,7 @@
     <h3 class="panel-title">
       <%= link_to fa_icon("pencil"), edit_project_path(project) %>
       <span class="name"><strong><%= project.name %></strong></span>
+      [ <%= link_to "Wiki", project.url %> ]
     </h3>
   </div>
   <div class="panel-body">
@@ -19,7 +20,7 @@
     </ul>
     <div class="actions">
       <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
-        <%= collection_select(:people, :people, Person.all, :id, :name) %>
+        <%= collection_select(:people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name) %>
         <%= options_from_collection_for_select(Person.all, :id, :name) %>
         <%= f.submit "Add", class: "btn btn-default" %>
       <% end %>

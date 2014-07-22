@@ -1,0 +1,22 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'bootstrap-select';
+@import 'font-awesome';
+@import 'jquery.minicolors';
+@import 'helpers';
+@import 'navbar';
+@import 'footer';
+@import 'breadcrumbs';
+@import 'grid';
+@import 'person';
+
+/* Forms */
+form .actions {
+  margin-top: 10px;
+}
+
+/* Project */
+.panel-body .actions {
+  margin-top: 15px;
+  padding-left: 20px;
+}

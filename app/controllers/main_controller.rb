@@ -1,15 +1,21 @@
 class MainController < ApplicationController
   def dashboard
-    if params[:search]
-      @projects = find_all_projects_by_person(params[:search])
+    puts "params: #{params.inspect}"
+    person = params[:search][:name] if params[:search]
+    puts "person: #{person.inspect}"
+    if person
+      @projects = find_all_projects_by_person(person)
     else
       @projects = Project.all
     end
   end
 
+  def settings
+  end
+
   def find_all_projects_by_person(name)
     projects = []
-    people = Person.where("name like 'i#{name}'")
+    people = Person.where("name like '#{name}'")
     Project.find_each do |project|
       people.each do |person|
         if project.people.include?(person)

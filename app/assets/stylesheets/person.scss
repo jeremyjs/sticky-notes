@@ -11,10 +11,15 @@ ul.unstyled {
   color: white;
   background-color: rgba(51, 51, 51, 0.5);
   position: absolute;
-  text-align: center;
   top: 0;
   width: 128px;
   z-index: 100;
+
+  .action {
+    color: #CC0000;
+    position: relative;
+    right: 2px;
+  }
 }
 img.media-object {
   width: 128px;
@@ -25,10 +30,6 @@ img.media-object {
 .blue { color: #0099FF; }
 .pink { color: pink; }
 .check-group {
-  input {
-    margin-right: 4px;
-  }
-  label {
-    margin-right: 15px;
-  }
+  input { margin-right: 4px; }
+  label { margin-right: 15px; }
 }

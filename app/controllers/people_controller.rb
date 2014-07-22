@@ -15,7 +15,12 @@ class PeopleController < ApplicationController
 
   # GET /people/new
   def new
-    @person = Person.new(project_id: params[:project])
+    @person = Person.new
+    if params[:project]
+      @person.projects << Project.find(params[:project])
+    else
+      @person
+    end
   end
 
   # GET /people/1/edit
@@ -58,7 +63,7 @@ class PeopleController < ApplicationController
   def destroy
     @person.destroy
     respond_to do |format|
-      format.html { redirect_to people_url, notice: 'Person was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Person was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -32,8 +32,7 @@
   </div>
   <div class="field form-group check-group">
     <%= f.label :project %><br />
-    <%= f.collection_check_boxes(:project_ids, Project.all, :id, :name,
-                            {:include_blank => "Please select a project..."}) %>
+    <%= f.collection_check_boxes :project_ids, Project.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

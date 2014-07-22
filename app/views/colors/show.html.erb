@@ -1,8 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h1 class="<%= @color.name.downcase %>-back"> <%= @color.name %> </h1>
 <p>
-  <strong>Name:</strong>
-  <%= @color.name %>
+  <strong>Hex Value:</strong>
+  <%= @color.hex %>
 </p>
 
 <%= link_to 'Edit', edit_color_path(@color) %> |
