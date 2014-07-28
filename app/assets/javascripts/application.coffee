@@ -4,6 +4,7 @@
 #= require jquery-ui
 #= require bootstrap
 #= require bootstrap_select
+#= require bootstrap-multiselect
 #= require jquery.minicolors
 #= require jquery.shapeshift
 #= require dashboard

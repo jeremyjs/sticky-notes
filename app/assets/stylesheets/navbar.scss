@@ -4,10 +4,19 @@
   border-bottom: 1px solid #999;
 
   .navbar-brand,
-  .navbar-nav > li > a {
-    color: #666;
-  }
+  .navbar-nav > li > a { color: #666; }
 }
+
 .navbar {
   border-radius: 0;
+}
+
+.settings.nav {
+  margin-right: -15px;
+
+  .gear-link { padding: 15px 5px; }
+}
+
+.project-selector {
+  .btn-group { padding: 8px 15px; }
 }

@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li><%= link_to "Dashboard", root_path %></li>
+  <li><%= link_to "Settings", settings_path %></li>
+  <li><%= link_to "Skills", skills_path %></li>
+  <li class="active"><%= @skill.name %></li>
+</ol>
 
-<p>
-  <strong>Name:</strong>
-  <%= @skill.name %>
-</p>
-
-<%= link_to 'Edit', edit_skill_path(@skill) %> |
-<%= link_to 'Back', skills_path %>
+<p>Should probably list all people who have this skill</p>

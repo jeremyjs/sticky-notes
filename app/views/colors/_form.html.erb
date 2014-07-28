@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <label for="color">Color</label><br>
+    <span id="color" class="rectangle" style="background-color: <%= @color.hex %>"></span>
+  </div>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>

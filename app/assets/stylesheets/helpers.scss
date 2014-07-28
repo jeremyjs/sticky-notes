@@ -1,3 +1,16 @@
 .inline {
   display: inline;
 }
+
+.box {
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.rectangle {
+  height: 26px;
+  width: 154px;
+  display: inline-block;
+  border: 1px solid #eee;
+}

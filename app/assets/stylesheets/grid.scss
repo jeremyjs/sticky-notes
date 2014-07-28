@@ -6,11 +6,13 @@
   height: 128px;
   width: 128px;
   position: absolute;
+  z-index: 20;
 }
 .grid-item-placeholder {
   height: 128px;
   width: 128px;
   position: absolute;
   background-color: #eee;
+  z-index: 10;
 }
 

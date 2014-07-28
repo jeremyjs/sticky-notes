@@ -22,6 +22,8 @@ $ ->
   $('input.colors[type=text]').minicolors
     theme: 'bootstrap'
 
+  $('.multiselect').multiselect()
+
   $('.grid').shapeshift()
   .on "ss-removed", (event, item) ->
     # TODO: data-id

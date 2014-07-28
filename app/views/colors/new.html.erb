@@ -1,5 +1,11 @@
+<ol class="breadcrumb">
+  <li><%= link_to "Dashboard", root_path %></li>
+  <li><%= link_to "Settings", settings_path %></li>
+  <li><%= link_to "Colors", colors_path %></li>
+  <li class="active">New Color</li>
+</ol>
+
 <h1>New color</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', colors_path %>
