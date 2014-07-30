@@ -5,6 +5,8 @@
 #= require bootstrap
 #= require bootstrap_select
 #= require bootstrap-multiselect
+#= require chosen.jquery
+#= require chosen.proto
 #= require jquery.minicolors
 #= require jquery.shapeshift
 #= require dashboard

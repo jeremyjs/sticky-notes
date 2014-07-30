@@ -16,7 +16,7 @@ ul.unstyled {
   z-index: 100;
 
   .action {
-    color: #CC0000;
+    color: $color-red;
     position: relative;
     right: 2px;
   }
@@ -27,7 +27,7 @@ img.media-object {
 .projects { margin-top: 20px; }
 .yellow { color: yellow; }
 .orange { color: orange; }
-.blue { color: #0099FF; }
+.blue { color: $color-blue; }
 .pink { color: pink; }
 .check-group {
   input { margin-right: 4px; }

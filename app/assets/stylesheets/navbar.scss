@@ -1,10 +1,10 @@
 .navbar-default {
-  background-color: #DDD;
+  background-color: $bg-primary;
   border: none;
-  border-bottom: 1px solid #999;
+  border-bottom: 1px solid $color-accent;
 
   .navbar-brand,
-  .navbar-nav > li > a { color: #666; }
+  .navbar-nav > li > a { color: $color-primary; }
 }
 
 .navbar {
@@ -18,5 +18,13 @@
 }
 
 .project-selector {
-  .btn-group { padding: 8px 15px; }
+  margin: 0;
+  margin-right: 5px;
+
+  .selector {
+    display: inline-block;
+    margin: 0;
+  }
+
+  .btn-group { padding: 8px 0; }
 }

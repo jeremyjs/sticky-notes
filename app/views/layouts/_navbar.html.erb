@@ -45,7 +45,16 @@
           </ul>
         </li>
         <li class="project-selector">
-          <%= select_tag :project_id, options_from_collection_for_select(Project.all, :id, :name, params[:project_id]), multiple: true, class: "multiselect" %>
+          <%= form_tag dashboard_path, method: 'get', role: "search", class: "project-selector" do %>
+            <span class="selector">
+              <%= select_tag :project_id,
+                options_from_collection_for_select(Project.all, :id, :name, params[:project_id]),
+                multiple: true,
+                class: "multiselect",
+                value: params[:project_id],
+                onchange: "elemSubmit(this)" %>
+            </span>
+          <% end %>
         </li>
       </ul>
 

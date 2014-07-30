@@ -3,8 +3,8 @@
   padding: 0;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #fff;
+  background-color: white;
 }
 .breadcrumb > .active {
-  color: #333;
+  color: $color-dark-gray;
 }

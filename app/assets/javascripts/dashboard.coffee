@@ -18,11 +18,22 @@ addPeople = (project_id, person_id) ->
       console.log("Successfully posted.")
       location.reload()
 
+projectSearch = (projects) ->
+  $.get "/dashboard",
+    search:
+      projects: projects
+
+@elemSubmit = (elem) ->
+  console.log elem
+  # elem.form.submit()
+
 $ ->
   $('input.colors[type=text]').minicolors
     theme: 'bootstrap'
 
-  $('.multiselect').multiselect()
+  $('.multiselect').multiselect
+    onDropdownHide: (event) ->
+      $('.multiselect')[0].form.submit()
 
   $('.grid').shapeshift()
   .on "ss-removed", (event, item) ->
