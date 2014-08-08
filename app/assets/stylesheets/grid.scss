@@ -3,14 +3,14 @@
   width: 100%;
 }
 .grid-item {
-  height: 128px;
-  width: 128px;
+  height: $person-width;
+  width: $person-width;
   position: absolute;
   z-index: 20;
 }
 .grid-item-placeholder {
-  height: 128px;
-  width: 128px;
+  height: $person-width;
+  width: $person-width;
   position: absolute;
   background-color: $bg-secondary;
   z-index: 10;

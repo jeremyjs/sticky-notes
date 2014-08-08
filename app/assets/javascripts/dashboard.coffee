@@ -59,7 +59,10 @@ $ ->
     removePeople(project_id, person_id)
     location.reload()
 
-  $('.media-heading').each ->
-    margin = $(this).width() - $(this).children('.name').width()
-    $(this).children('.name').css('margin-left', margin/2)
+  max = 0
+  $('.project').each ->
+    tmp = $(this).outerHeight()
+    max = tmp if tmp > max
+  $('ul.grid').attr('height', max)
+  $('.project ul').attr('height', max + ' !important;')
 

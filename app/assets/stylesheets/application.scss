@@ -12,6 +12,7 @@
 @import 'footer';
 @import 'breadcrumbs';
 @import 'grid';
+@import 'project';
 @import 'person';
 
 /* Forms */
@@ -19,8 +20,3 @@ form .actions {
   margin-top: 10px;
 }
 
-/* Project */
-.panel-body .actions {
-  margin-top: 15px;
-  padding-left: 20px;
-}

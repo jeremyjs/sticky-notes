@@ -19,7 +19,7 @@
     # Grid Properties
     align: "left"
     colWidth: null
-    columns: null
+    columns: 1
     minColumns: 1
     autoHeight: true
     maxHeight: null

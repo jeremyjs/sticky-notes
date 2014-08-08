@@ -66,8 +66,8 @@
 }
 
 .bootstrap-select .btn:focus {
-    outline: thin dotted #333333 !important;
-    outline: 5px auto -webkit-focus-ring-color !important;
+    outline: thin dotted #333333;
+    outline: 5px auto;
     outline-offset: -2px;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .bootstrap-select.btn-group > .disabled:focus {
-    outline: none !important;
+    outline: none;
 }
 
 .bootstrap-select.btn-group[class*="span"] .btn {
@@ -307,3 +307,4 @@
 .bootstrap-select .bs-actionsbox .btn-group button {
     width: 50%;
 }
+

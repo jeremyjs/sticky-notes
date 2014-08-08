@@ -14,3 +14,16 @@
   display: inline-block;
   border: 1px solid $bg-secondary;
 }
+
+.btn-round {
+  border-radius: 100%;
+  font-size: 11px;
+  height: 20px;
+  width: 20px;
+  padding: 0;
+
+  .btn-plus-text {
+    margin-top: -4px;
+  }
+}
+
