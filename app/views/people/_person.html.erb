@@ -1,10 +1,10 @@
-<li class="media">
+<li class="person media">
   <a class="media-link pull-left" href="<%= edit_person_path(person) %>">
-    <h4 class="media-heading" style="color: <%= "#{person.color}" %>;">
+    <h4 class="media-heading">
       <span class="name"><%= person.name %></span>
       <span class="action pull-right"><i class="fa fa-times"></i></span>
     </h4>
     <%= image_tag "avatar_placeholder.png",
-      class: "media-object" %>
+      class: "media-object", style: "border-color: #{person.color}" %>
   </a>
 </li>

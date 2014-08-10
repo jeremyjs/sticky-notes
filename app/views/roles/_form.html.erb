@@ -15,9 +15,12 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :color_id %><br>
-    <%= f.number_field :color_id %>
+  <br>
+  <div class="field form-group radio-group">
+    <% Color.all.each do |color| %>
+      <%= f.radio_button :color_id, color.id %>
+      <%= f.label :color_id, color.name %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

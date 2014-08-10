@@ -11,3 +11,5 @@ $bg-primary: #eee;
 $bg-secondary: #eee;
 
 $person-width: 64px;
+$person-border-size: 3px;
+$person-outer-side: $person-width + (2 * $person-border-size);

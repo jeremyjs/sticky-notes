@@ -1,37 +1,54 @@
-ul.unstyled {
+.people.unstyled {
   list-style: none;
   padding-left: 20px;
+
+  .no-assignees {
+    text-align: left;
+  }
 }
-.media {
+
+.person {
   width: $person-width;
   display: inline;
-}
-.media-link { position: relative; }
-.media-heading {
-  color: white;
-  background-color: rgba(51, 51, 51, 0.5);
-  position: absolute;
-  top: 0;
-  width: $person-width;
-  height: $person-width/4;
-  z-index: 100;
-  overflow: hidden;
-  font-size: 12px;
-  padding-left: 2px;
 
-  .name {
+  .media-link { position: relative; }
+
+  .media-heading {
+    color: white;
+    background-color: rgba(51, 51, 51, 0.5);
+    position: absolute;
+    top: $person-border-size;
+    left: $person-border-size;
+    width: $person-width;
+    height: $person-width/4;
+    z-index: 100;
     overflow: hidden;
+    font-size: 12px;
+    padding-left: 2px;
+
+    .name {
+      display: block;
+      float: left;
+      overflow: hidden;
+      width: $person-width - 13px;
+    }
+
+    .action {
+      display: block;
+      color: $color-red;
+      position: relative;
+      right: 2px;
+    }
   }
 
-  .action {
-    color: $color-red;
-    position: relative;
-    right: 2px;
+  .media-object {
+    width: $person-width;
+    box-sizing: content-box;
+    border: $person-border-size solid black;
   }
-}
-img.media-object {
-  width: $person-width;
-}
+
+} /* .person */
+
 .projects { margin-top: 20px; }
 .yellow { color: yellow; }
 .orange { color: orange; }

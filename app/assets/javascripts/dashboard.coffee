@@ -27,6 +27,22 @@ projectSearch = (projects) ->
   console.log elem
   # elem.form.submit()
 
+normalizeGrids = ->
+  max_height = 0
+  $('.people').each ->
+    tmp = $(this).height()
+    max_height = tmp if tmp > max_height
+
+  max_width = 0
+  $('.people').each ->
+    tmp = $(this).width()
+    max_width = tmp if tmp > max_width
+
+  $('.people').height max_height
+  $('.people').width max_width
+  $('.people').css 'margin-left', (max_width - 64)/2 + 30
+  $('.people').css 'padding-left', 0
+
 $ ->
   $('input.colors[type=text]').minicolors
     theme: 'bootstrap'
@@ -59,10 +75,5 @@ $ ->
     removePeople(project_id, person_id)
     location.reload()
 
-  max = 0
-  $('.project').each ->
-    tmp = $(this).outerHeight()
-    max = tmp if tmp > max
-  $('ul.grid').attr('height', max)
-  $('.project ul').attr('height', max + ' !important;')
+  normalizeGrids()
 

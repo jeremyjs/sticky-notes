@@ -5,14 +5,11 @@
     <span class="name"><strong><%= project.name %></strong></span>
     <span class="link"><%= link_to fa_icon("globe"), project.url %></span>
   </h3>
-  <ul id="<%= project.id %>" class="grid unstyled">
+  <ul id="<%= project.id %>" class="people grid unstyled">
     <% project.people.each do |person| %>
-      <div id="<%= person.id %>" class="grid-item">
+      <div id="<%= person.id %>" class="grid-item grid-item-active">
         <%= render person %>
       </div>
-    <% end %>
-    <% if project.people.empty? %>
-      <p>No assignees.</p>
     <% end %>
   </ul>
   <div class="actions">

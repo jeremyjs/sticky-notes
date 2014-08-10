@@ -18,7 +18,7 @@
 
     # Grid Properties
     align: "left"
-    colWidth: null
+    colWidth: 70
     columns: 1
     minColumns: 1
     autoHeight: true
