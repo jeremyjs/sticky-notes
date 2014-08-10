@@ -24,13 +24,15 @@
     z-index: 100;
     overflow: hidden;
     font-size: 12px;
-    padding-left: 2px;
+    padding: 0 2px;
 
     .name {
       display: block;
       float: left;
       overflow: hidden;
       width: $person-width - 13px;
+
+      &.full-width { width: $person-width - 4px; }
     }
 
     .action {

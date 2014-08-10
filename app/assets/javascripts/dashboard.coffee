@@ -51,20 +51,22 @@ $ ->
     onDropdownHide: (event) ->
       $('.multiselect')[0].form.submit()
 
-  $('.grid').shapeshift()
-  .on "ss-removed", (event, item) ->
-    # TODO: data-id
-    project_id = this.id
-    item_id = item.id
-    console.log("removing person " + item_id + " from project " + project_id)
-    removePeople(project_id, item_id)
+  $('.grid').shapeshift
+    enableDrag: false
+    enableCrossDrop: false
+  # .on "ss-removed", (event, item) ->
+  #   # TODO: data-id
+  #   project_id = this.id
+  #   item_id = item.id
+  #   console.log("removing person " + item_id + " from project " + project_id)
+  #   removePeople(project_id, item_id)
 
-  .on "ss-added", (event, item) ->
-    # TODO: data-id
-    project_id = this.id
-    item_id = item.id
-    console.log("adding person " + item_id + " to project " + project_id)
-    addPeople(project_id, item_id)
+  # .on "ss-added", (event, item) ->
+  #   # TODO: data-id
+  #   project_id = this.id
+  #   item_id = item.id
+  #   console.log("adding person " + item_id + " to project " + project_id)
+  #   addPeople(project_id, item_id)
 
   $('.media-heading .action').click (event)->
     event.preventDefault()

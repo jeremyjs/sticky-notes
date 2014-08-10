@@ -3,15 +3,17 @@
   <li class="active">Settings</li>
 </ol>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<h2>Settings</h2>
 
-<h1>Settings</h1>
+<h4><%= link_to "Colors", colors_path %></h4>
 
-<h3><%= link_to "Colors", colors_path %></h3>
+<h4><%= link_to "Roles", roles_path %></h4>
 
-<h3><%= link_to "Roles", roles_path %></h3>
+<h4><%= link_to "Skills", skills_path %></h4>
 
-<h3><%= link_to "Skills", skills_path %></h3>
-
-<h4>Login</h4>
+<% if current_admin %>
+  <h4><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></h4>
+  <h4><%= link_to('Change Password', edit_admin_registration_path(current_admin.id)) %></h4>
+<% else %>
+  <h4><%= link_to('Login', new_admin_session_path) %></h4>
+<% end %>

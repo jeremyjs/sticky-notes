@@ -1,7 +1,9 @@
 <ol class="breadcrumb">
   <li><%= link_to "Dashboard", root_path %></li>
   <li class="active">People</li>
-  <li><%= link_to "New Person", new_person_path, class: "btn btn-default" %></li>
+  <% if current_admin %>
+    <li><%= link_to "New Person", new_person_path, class: "btn btn-default" %></li>
+  <% end %>
 </ol>
 
 <table class="table">
@@ -9,25 +11,27 @@
     <tr>
       <th>Name</th>
       <th>Roles</th>
+      <th>Skills</th>
       <th>Projects</th>
-      <th colspan="3"></th>
+      <% if current_admin %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
   <tbody>
     <% @people.each do |person| %>
-      <tr>
+      <tr id="person-<%= person.id %>">
         <td><%= person.name %></td>
-        <td><% person.roles.each do |role| %>
-          <%= role.name %>&nbsp;&nbsp;
-        <% end %></td>
-        <td><% person.projects.each do |project| %>
-          <%= project.name %>&nbsp;&nbsp;
-        <% end %></td>
-        <td>
-          <%= link_to 'Edit', edit_person_path(person) %> |
-          <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <td><%= person.roles.map{ |r| r.name }.to_sentence %></td>
+        <td><%= person.skills.map{ |s| s.name }.to_sentence %></td>
+        <td><%= person.projects.map{ |p| p.name }.to_sentence %></td>
+        <% if current_admin %>
+          <td>
+            <%= link_to 'Edit', edit_person_path(person) %> |
+            <%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

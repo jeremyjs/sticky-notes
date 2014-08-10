@@ -2,8 +2,10 @@
   <li><%= link_to "Dashboard", root_path %></li>
   <li><%= link_to "Settings", settings_path %></li>
   <li class="active">Roles</li>
-  <li><%= link_to "New Role", new_role_path, class: "btn btn-default" %></li>
-</ol>
+  <% if current_admin %>
+    <li><%= link_to "New Role", new_role_path, class: "btn btn-default" %></li>
+  <% end %>
+  </ol>
 
 <h1>Listing roles</h1>
 
@@ -12,7 +14,9 @@
     <tr>
       <th>Name</th>
       <th>Color</th>
-      <th colspan="2"></th>
+      <% if current_admin %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -20,9 +24,16 @@
     <% @roles.each do |role| %>
       <tr>
         <td><%= role.name %></td>
-        <td><%= link_to role.color.name, edit_color_path(role.color) %></td>
-        <td><%= link_to 'Edit', edit_role_path(role) %></td>
-        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_admin %>
+          <td><%= link_to role.color.name, edit_color_path(role.color) %></td>
+          <td><%= link_to 'Edit', edit_role_path(role) %></td>
+          <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td>
+            <span id="color" class="box" style="background-color: <%= role.color.hex %>"></span>
+            <%= role.color.name %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

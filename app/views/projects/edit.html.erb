@@ -2,6 +2,7 @@
   <li><%= link_to "Dashboard", root_path %></li>
   <li><%= link_to "Projects", projects_path %></li>
   <li class="active"><%= @project.name %></li>
+  <li><%= link_to "New Person", new_person_path, class: "btn btn-default" %></li>
 </ol>
 
 <%= render 'form' %>

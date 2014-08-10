@@ -1,24 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h3><%= @person.name %></h3>
 
 <p>
-  <strong>Name:</strong>
-  <%= @person.name %>
+  <strong>Roles:</strong>
+  <%= @person.roles.map{ |r| r.name }.to_sentence %>
 </p>
 
 <p>
-  <strong>Color:</strong>
-  <%= @person.color %>
+  <strong>Skills:</strong>
+  <%= @person.skills.map{ |s| s.name }.to_sentence %>
 </p>
 
 <p>
-  <strong>Role:</strong>
-  <%= @person.role %>
+  <strong>Band:</strong>
+  <%= @person.band %>
 </p>
 
 <p>
-  <strong>Project:</strong>
-  <%= @person.project_id %>
+  <strong>Projects:</strong>
+  <%= @person.projects.map{ |p| p.name }.to_sentence %>
 </p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>

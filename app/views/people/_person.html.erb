@@ -1,8 +1,10 @@
 <li class="person media">
-  <a class="media-link pull-left" href="<%= edit_person_path(person) %>">
+  <a class="media-link pull-left" href="<%= current_admin ? edit_person_path(person) : person_path(person) %>">
     <h4 class="media-heading">
-      <span class="name"><%= person.name %></span>
-      <span class="action pull-right"><i class="fa fa-times"></i></span>
+      <span class="name<%= " full-width" unless current_admin %>"><%= person.name %></span>
+      <% if current_admin %>
+        <span class="action pull-right"><i class="fa fa-times"></i></span>
+      <% end %>
     </h4>
     <%= image_tag "avatar_placeholder.png",
       class: "media-object", style: "border-color: #{person.color}" %>

@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
-  before_action :set_projects, only: [:new, :edit, :update]
+  before_action :authenticate_admin!, only: [:create, :update, :destroy]
 
   # GET /people
   # GET /people.json

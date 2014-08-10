@@ -2,8 +2,10 @@
   <li><%= link_to "Dashboard", root_path %></li>
   <li><%= link_to "Settings", settings_path %></li>
   <li class="active">Skills</li>
-  <li><%= link_to "New Skill", new_skill_path, class: "btn btn-default" %></li>
-</ol>
+  <% if current_admin %>
+    <li><%= link_to "New Skill", new_skill_path, class: "btn btn-default" %></li>
+  <% end %>
+  </ol>
 
 <h1>Listing skills</h1>
 
@@ -11,17 +13,20 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="2"></th>
-    </tr>
+      <% if current_admin %>
+        <th colspan="2"></th>
+      <% end %>
+      </tr>
   </thead>
 
   <tbody>
     <% @skills.each do |skill| %>
       <tr>
         <td><%= skill.name %></td>
-        <td><%#= link_to 'Show', skill %></td>
-        <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-        <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_admin %>
+          <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
+          <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -2,7 +2,9 @@
   <li><%= link_to "Dashboard", root_path %></li>
   <li><%= link_to "Settings", settings_path %></li>
   <li class="active">Colors</li>
-  <li><%= link_to "New Color", new_color_path, class: "btn btn-default" %></li>
+  <% if current_admin %>
+    <li><%= link_to "New Color", new_color_path, class: "btn btn-default" %></li>
+  <% end %>
 </ol>
 
 <h1>Listing colors</h1>
@@ -13,7 +15,9 @@
       <th>Color</th>
       <th>Name</th>
       <th>Hex</th>
-      <th colspan="2"></th>
+      <% if current_admin %>
+        <th colspan="2"></th>
+      <% end %>
     </tr>
   </thead>
 
@@ -23,8 +27,10 @@
         <td><span class="box" style="background-color: <%= color.hex %>"></span></td>
         <td><%= color.name %></td>
         <td><%= color.hex %></td>
-        <td><%= link_to 'Edit', edit_color_path(color) %></td>
-        <td><%= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_admin %>
+          <td><%= link_to 'Edit', edit_color_path(color) %></td>
+          <td><%= link_to 'Destroy', color, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

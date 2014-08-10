@@ -1,7 +1,7 @@
 <% project ||= @project %>
 <div class="project">
   <h3 class="title">
-    <%= link_to fa_icon("pencil"), edit_project_path(project) %>
+    <%= link_to fa_icon("pencil"), edit_project_path(project), class: "#{"invisible" unless current_admin}" %>
     <span class="name"><strong><%= project.name %></strong></span>
     <span class="link"><%= link_to fa_icon("globe"), project.url %></span>
   </h3>
@@ -12,12 +12,14 @@
       </div>
     <% end %>
   </ul>
-  <div class="actions">
-    <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
-      <%= collection_select(:people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name) %>
-      <%= options_from_collection_for_select(Person.all, :id, :name) %>
-      <%= f.submit "+", class: "btn btn-default btn-xs btn-round" %>
-    <% end %>
-  </div>
+  <% if current_admin %>
+    <div class="actions">
+      <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
+        <%= collection_select(:people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name) %>
+        <%= options_from_collection_for_select(Person.all, :id, :name) %>
+        <%= f.submit "+", class: "btn btn-default btn-xs btn-round" %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
