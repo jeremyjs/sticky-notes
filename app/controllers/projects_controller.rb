@@ -79,9 +79,13 @@ class ProjectsController < ApplicationController
 
   def add_people
     return redirect_to :back unless params[:people]
-    current_projects = Person.find(params[:people][:people]).projects
-    new_project = Project.find(params[:id])
-    current_projects << new_project unless current_projects.include?(new_project)
+    people = params[:people][:people]
+    people = [ people ] if people.is_a? String
+    people.reject(&:blank?).each do |person_id|
+      current_projects = Person.find(person_id.to_i).projects
+      new_project = Project.find(params[:id])
+      current_projects << new_project unless current_projects.include?(new_project)
+    end
     redirect_to :back
   end
 

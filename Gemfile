@@ -16,4 +16,5 @@ gem 'spring',        group: :development
 gem 'haml'
 gem 'font-awesome-rails'
 gem 'devise'
+gem 'selectize-rails'
 

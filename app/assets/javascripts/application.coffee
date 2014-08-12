@@ -9,6 +9,9 @@
 #= require chosen.proto
 #= require jquery.minicolors
 #= require jquery.shapeshift
+#= require selectize
+#= require helpers
 #= require dashboard
+#= require project
 #= require turbolinks
 

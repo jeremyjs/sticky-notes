@@ -15,9 +15,8 @@
   <% if current_admin %>
     <div class="actions">
       <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
-        <%= collection_select(:people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name) %>
-        <%= options_from_collection_for_select(Person.all, :id, :name) %>
-        <%= f.submit "+", class: "btn btn-default btn-xs btn-round" %>
+        <%= collection_select(:people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name, {}, { multiple: true, class: "selectize" }) %>
+        <%= f.submit "Add People", class: "btn btn-default" %>
       <% end %>
     </div>
   <% end %>
