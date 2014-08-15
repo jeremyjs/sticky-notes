@@ -1,12 +1,13 @@
 ## "The Donnie Hall Project"
 ### Codename: Ownership
 
-Donnie has a massive wall of infomation. Literally. This is an attempt to migrate that information to a digital format.
+Donnie has a massive wall of information. This application represents that information in a digital format.
 
 Features
 - ✓ Detailed User Profiles
-- ✓ Drag and drop
+- ✓ Drag and Drop Interface
 - ✓ External Links
 - ✓ People Search
-- ** Project Search
-- ** Color Customization
+- ✓ Project Search
+- ✓ Color Customization
+- ... and more!
