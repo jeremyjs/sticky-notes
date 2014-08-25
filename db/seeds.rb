@@ -1,23 +1,8 @@
 
 projects = [
   "Accounting",
-  "Brazil",
-  "SMB",
-  "Colussus",
-  "NetCredit",
-  "CA/AU Metrix",
-  "QQR",
-  "Aperture",
-  "CSO",
-  "Dynamics",
-  "Onstride",
-  "FCA",
-  "TXCSO",
-  "UX",
-  "Intern",
-  "Rubinius",
-  "Portfolio",
-  "Identity"
+  "Big Thing 1",
+  "Other Big Thing"
 ]
 colors = [
   { name: "Yellow", value: "FFFF00" },
@@ -33,10 +18,11 @@ roles = [
   { name: "DB Developer", color_id: 4 }
 ]
 people = [
-  { name: "Nicole" },
-  { name: "Ian" },
-  { name: "Calvin" },
-  { name: "Mert" }
+  { name: "Billy" },
+  { name: "Bob" },
+  { name: "Joe" },
+  { name: "Steve" },
+  { name: "Donnie" }
 ]
 
 projects.each { |name| Project.find_or_create_by({ name: name }) }

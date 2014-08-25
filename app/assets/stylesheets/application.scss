@@ -1,20 +1,23 @@
+@import 'variables';
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'bootstrap-select';
-@import 'bootstrap-multiselect';
-@import 'chosen';
 @import 'font-awesome';
-@import 'jquery.minicolors';
-@import 'variables';
+@import 'selectize';
+@import 'selectize.bootstrap3';
+// @import 'jquery.minicolors';
+@import 'vendor/bootstrap-select';
+@import 'vendor/bootstrap-multiselect';
+@import 'vendor/chosen';
+@import 'vendor/bootstrap-vertical-divider';
+
 @import 'helpers';
-@import 'bootstrap-vertical-divider';
 @import 'navbar';
 @import 'footer';
 @import 'breadcrumbs';
 @import 'grid';
 @import 'project';
-@import 'selectize';
-@import 'selectize.bootstrap3';
+@import 'project-edit';
 @import 'person';
 
 /* Forms */

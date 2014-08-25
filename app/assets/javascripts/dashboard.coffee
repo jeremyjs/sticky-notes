@@ -40,7 +40,7 @@ normalizeGrids = ->
 
   $('.people').height max_height
   $('.people').width max_width
-  $('.people').css 'margin-left', (max_width - 64)/2 + 30
+  $('.people').css 'margin-left', (max_width - 64)/2 + 35
   $('.people').css 'padding-left', 0
 
 $ ->
