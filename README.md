@@ -1,7 +1,6 @@
-## "The Donnie Hall Project"
-### Codename: Ownership
+## Sticky Notes
 
-Donnie has a massive wall of information. This application represents that information in a digital format.
+A simple project management application built on Rails.
 
 Features
 - ✓ Detailed User Profiles
