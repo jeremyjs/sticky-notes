@@ -4,7 +4,13 @@
   border-bottom: 1px solid $color-accent;
 
   .navbar-brand,
-  .navbar-nav > li > a { color: $color-primary; }
+  .navbar-nav > li > a {
+    color: $color-primary;
+
+    &.btn-link {
+      padding: 8px 0;
+    }
+  }
 }
 
 .navbar {

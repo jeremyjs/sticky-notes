@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :colors
 
-  root 'main#dashboard'
+  root 'main#landing'
   get 'main/dashboard', as: 'dashboard'
   get 'settings', controller: 'main', action: 'settings', as: 'settings'
 

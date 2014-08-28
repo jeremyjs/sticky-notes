@@ -3,8 +3,13 @@
   padding: 10px 0 20px;
   float: left;
   text-align: center;
-  border: 1px solid $color-primary;
+  border: 1px solid $color-secondary;
   border-radius: 7.5px;
+  box-shadow: 0 0 10px #888888;
+
+  &:first-child {
+    margin-left: 0px;
+  }
 
   .title {
     font-size: 16px;

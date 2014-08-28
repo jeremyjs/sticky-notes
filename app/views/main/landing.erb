@@ -1,0 +1,20 @@
+<h1 class="center"> Welcome to Sticky Notes! </h1>
+<p class="center lead"> A simple project management dashboard </p>
+
+<div class="row">
+  <div class="col-md-2 col-md-offset-5">
+    <div class="vertical-btn-list">
+      <%= link_to new_admin_session_path, class: "btn-link" do %>
+        <button type="button" class="btn btn-default btn-lg btn-block">
+          Sign in
+        </button>
+      <% end %>
+
+      <%= link_to new_admin_registration_path, class: "btn-link" do %>
+        <button type="button" class="btn btn-default btn-lg btn-block">
+          Sign up
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

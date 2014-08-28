@@ -31,3 +31,10 @@ form .actions {
   margin-bottom: 0;
   border: none;
 }
+
+.lead {
+  color: $color-primary;
+}
+
+a > .btn { text-decoration: none; }
+.vertical-btn-list .btn { margin-top: 10px; }

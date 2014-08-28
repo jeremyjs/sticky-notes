@@ -17,6 +17,12 @@ class MainController < ApplicationController
   def settings
   end
 
+  def landing
+    if current_admin
+      redirect_to action: :dashboard
+    end
+  end
+
   private
   def find_all_projects_by_person(name)
     projects = []
