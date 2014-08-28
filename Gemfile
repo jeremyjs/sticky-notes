@@ -16,7 +16,7 @@ gem 'jquery-minicolors-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'spring',        group: :development
-gem 'haml'
+# gem 'haml'
 gem 'font-awesome-rails'
 gem 'devise'
 gem 'selectize-rails'
