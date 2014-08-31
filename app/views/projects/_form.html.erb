@@ -33,9 +33,11 @@
       <div class="people-list">
         <%= project.people.map { |p| p.name }.to_sentence %>
       </div>
-      <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
-        <%= collection_select :people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name, {}, { multiple: true, class: "selectize" } %>
-        <%= f.submit "Add People", class: "btn btn-default" %>
+      <% if project %>
+        <%= form_for project, url: { controller: "projects", action: "add_people", id: project }, html: { class: "inline" } do |f| %>
+          <%= collection_select :people, :people, Person.all.reject { |p| p.projects.include? project }, :id, :name, {}, { multiple: true, class: "selectize" } %>
+          <%= f.submit "Add People", class: "btn btn-default" %>
+        <% end %>
       <% end %>
     </div>
   </div>
