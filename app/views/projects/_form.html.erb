@@ -1,4 +1,4 @@
-<% project ||= @project ||= Project.new %>
+<% project = @project || Project.create %>
 <div class="row">
   <div class="project-edit">
     <div class="col-md-2">
