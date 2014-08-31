@@ -8,10 +8,11 @@ Devise.setup do |config|
   Warden::Manager.before_logout do |user,auth,opts|
     auth.cookies.delete :signed_in
   end
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  # config.secret_key = 'ba3d0e59ba584a80cde01495edf99e65b9828facd8c2d73d798162fa01ceb0a340802a62e11c621d47830b8bd3b83181b994a0289a09003b323e51d8a5f5f906'
+  config.secret_key = 'f93cc3a8659d575849a1c48f918c5ce8a6be3e542c4c6ae69a7435aae585bdfeed42fff1b0147ad42fe5b244c621fe935ceeb5a89290f2982a1ef7233fa09eee'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -78,7 +79,6 @@ Devise.setup do |config|
   # to behave the same regardless if the e-mail provided was right or wrong.
   # Does not affect registerable.
   # config.paranoid = true
-
   # By default Devise will store the user in session. You can skip storage for
   # particular strategies by setting this option.
   # Notice that if you are skipping storage for all authentication paths, you
