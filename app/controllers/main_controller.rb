@@ -20,6 +20,9 @@ class MainController < ApplicationController
   def landing
     if current_admin
       redirect_to action: :dashboard
+    elsif User.exists?(email: 'sticky-notes@example.com')
+      sign_in(:user, 'example')
+      redirect_to action: :dashboard
     end
   end
 
