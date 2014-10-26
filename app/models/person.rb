@@ -8,7 +8,7 @@ class Person < ActiveRecord::Base
   end
 
   def color
-    if roles.any?
+    if roles.any? && role.color
       role.color.hex
     else
       "white"

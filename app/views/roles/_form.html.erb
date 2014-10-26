@@ -19,7 +19,7 @@
   <div class="field form-group radio-group">
     <% Color.all.each do |color| %>
       <%= f.radio_button :color_id, color.id %>
-      <%= f.label :color_id, color.name %>
+      <%= f.label :color_id, color.name || 'None' %>
     <% end %>
   </div>
   <div class="actions">

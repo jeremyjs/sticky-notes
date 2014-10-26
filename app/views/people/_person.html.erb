@@ -7,6 +7,6 @@
       <% end %>
     </h4>
     <%= image_tag "avatar_placeholder.png",
-      class: "media-object", style: "border-color: #{person.color}" %>
+      class: "media-object", style: "border-color: #{person.color || '#000'}" %>
   </a>
 </li>

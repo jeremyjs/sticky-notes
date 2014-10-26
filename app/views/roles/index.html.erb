@@ -25,12 +25,16 @@
       <tr>
         <td><%= role.name %></td>
         <% if current_admin %>
-          <td><%= link_to role.color.name, edit_color_path(role.color) %></td>
+          <% if role.color %>
+            <td><%= link_to role.color.name, edit_color_path(role.color) %></td>
+          <% else %>
+            <td>None</td>
+          <% end %>
           <td><%= link_to 'Edit', edit_role_path(role) %></td>
           <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% else %>
           <td>
-            <span id="color" class="box" style="background-color: <%= role.color.hex %>"></span>
+            <span id="color" class="box" style="background-color: <%= role.color.hex || '#000' %>"></span>
             <%= role.color.name %>
           </td>
         <% end %>
@@ -40,4 +44,3 @@
 </table>
 
 <br>
-
