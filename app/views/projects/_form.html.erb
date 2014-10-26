@@ -24,7 +24,8 @@
           <%= f.text_field :url %>
         </div>
         <div class="actions">
-          <%= f.submit "Update Project", class: "btn btn-default" %>
+          <%= f.submit "Update Project", class: "btn btn-primary" %>
+          <%= link_to 'Delete Project', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         </div>
       <% end %>
     </div>
